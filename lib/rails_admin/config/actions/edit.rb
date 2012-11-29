@@ -24,7 +24,7 @@ module RailsAdmin
 
             elsif request.put? # UPDATE
 
-              @cached_assocations_hash = associations_hash
+#             @cached_assocations_hash = associations_hash
               @modified_assoc = []
 
               @old_object = @object.dup
@@ -37,7 +37,7 @@ module RailsAdmin
               end
 
               if @object.save
-                @auditing_adapter && @auditing_adapter.update_object(@abstract_model, @object, @cached_assocations_hash, associations_hash, @modified_assoc, @old_object, _current_user)
+#               @auditing_adapter && @auditing_adapter.update_object(@abstract_model, @object, @cached_assocations_hash, associations_hash, @modified_assoc, @old_object, _current_user)
                 respond_to do |format|
                   format.html { redirect_to_on_success }
                   format.js { render :json => { :id => @object.id, :label => @model_config.with(:object => @object).object_label } }
